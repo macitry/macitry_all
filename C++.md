@@ -77,7 +77,6 @@ void main()
 
 /*第二类：main不指定返回值*/
 // #include <stdio.h>
-
 // fun_1()
 // {
 //     return 1.2;
@@ -99,7 +98,6 @@ void main()
 //     printf("Hello World\n");
 //      return 0 ;
 // }
-
 ```
 
 ### 总结
