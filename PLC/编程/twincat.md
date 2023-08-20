@@ -3,3 +3,5 @@
 * 对于开机自启动:
 WinCE不需要勾上AUTO LOGON ； 
 WINXP 、WIN7 、 WIN10需要勾上AUTO LOGON，并输入对应用户密码，默认出厂用户名：==Administrator== 密码：==1==
+* 代码提示：工具——>选项——>TwinCAT——>PLC Environment——>Smart coding
+勾选(1)键入点号(.)之后列出组件;(2)键入时立即列出组件

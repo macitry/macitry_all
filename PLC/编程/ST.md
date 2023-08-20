@@ -6,11 +6,13 @@
 
 ## 参考资料
 
-《TC3_IEC_CH》
-
+* 《TC3_IEC_CH》
+* https://infosys.beckhoff.com/(此网站为倍福信息系统，大部分所需信息都能在该网站找到)
 ## 备注
 
-语法标准：IEC61131-3
+* 语法标准：IEC61131-3
+
+
 
 ## 基础知识点
 
@@ -54,9 +56,10 @@ UINT|0|65535|16位|n|
 
 数据类型|最小值|最大值|数据位数|前缀(Prefix)|备注|
 -|-|-|-|-|-|
-REAL|||4位|f|
-LREAL|0|0|8位|f|
-
+REAL|||32位|f|
+LREAL|0|0|64位|f|
+注释：1Byte=8Bit
+该类数据类型可以看作C语言中float单精度实数和double双精度实数。
 #### 字符串
 
 数据类型|数据位数|前缀(Prefix)|备注|
@@ -73,6 +76,7 @@ sVar1:STRING(255);|sVar:='ABC';|256|3|
 persistent：在PERSISTENT中声明的变量在PLC关机时会保存其数值，在PLC上电后会读取已保存的数据。
 * 会生成两个文件用于保存数据。
 * 对于某些重要的参数需要记录的话，建议在定义时，将其定义成Persisitent类型，需要勾选Persisitent
+示例：
 ```
 VAR_GLOBAL PERSISTENT
     n_abc:UDINT;
@@ -110,9 +114,39 @@ FunctionBlock在调用时，不建议使用variables方式进行调用
 * 可以调用：FC
 * 局部变量：临时
 
+### 常见功能块FB(PLC Library库：Standard)
+
+#### 触发器(Trigger)
+
+##### 上升沿触发器(R_TRIG)
+命名：R是Rising缩写
+作用：输入CLK=TRUE时，Q=FLASE;
+
+```
+VAR_INPUT
+    CLK : BOOL;
+END_VAR
+VAR_OUTPUT
+    Q   : BOOL;
+END_VAR;
+```
+
+
+##### 下降沿触发器(F_TRIG)
+命名：F是Falling缩写
+```
+VAR_INPUT
+    CLK : BOOL;
+END_VAR
+VAR_OUTPUT
+    Q   : BOOL;
+END_VAR;
+```
+
 ## 缩写解释
 
-* POU:program organistion unit
+* POU:Program Organistion Unit
 * PRG:Progrm
 * FB:Function Block
 * FC:Function
+* DUT:Data Unit Type 数据单元类型
