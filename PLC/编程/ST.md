@@ -7,7 +7,8 @@
 ## 参考资料
 
 * 《TC3_IEC_CH》
-* https://infosys.beckhoff.com/(此网站为倍福信息系统，大部分所需信息都能在该网站找到)
+* <https://infosys.beckhoff.com/(此网站为倍福信息系统，大部分所需信息都能在该网站找到)>
+
 ## 备注
 
 * 语法标准：IEC61131-3
@@ -18,8 +19,7 @@
 
 ### 变量声明格式
 
-```
-
+```C
 变量名:数据类型:=赋值;
 ```
 
@@ -31,6 +31,7 @@
 ---
 
 ### 注释 
+
 >多行:
 > 以 ==(*== 开始, 以 ==*)== 结束
 >单行:
@@ -38,7 +39,7 @@
 
 ### 数据类型
 
-#### 基本
+#### 整型
 
 数据类型|最小值|最大值|数据位数|前缀(Prefix)|备注|
 -|-|-|-|-|-|
@@ -52,7 +53,7 @@ INT|-32768|32767|16位|n|
 UINT|0|65535|16位|n|
 ...|
 
-#### 特殊
+#### 浮点型
 
 数据类型|最小值|最大值|数据位数|前缀(Prefix)|备注|
 -|-|-|-|-|-|
@@ -73,19 +74,38 @@ sVar1:STRING(1);|sVar:='X';|2|1|
 sVar1:STRING(255);|sVar:='ABC';|256|3|
 
 #### 断电保持型变量：PERSISTENT
+
 persistent：在PERSISTENT中声明的变量在PLC关机时会保存其数值，在PLC上电后会读取已保存的数据。
+
 * 会生成两个文件用于保存数据。
 * 对于某些重要的参数需要记录的话，建议在定义时，将其定义成Persisitent类型，需要勾选Persisitent
 示例：
-```
+
+```C
 VAR_GLOBAL PERSISTENT
     n_abc:UDINT;
 END_VAR
----
+/////////////////////
 VAR PERSISTENT
     n_abc:STRING;
 END_VAR
 ```
+
+### 地址定义
+
+&emsp;&emsp;变量名在特殊情况下是可以与地址进行连接的
+&emsp;&emsp;对于确定输入,输出固定地址变量,可以使用AT%I*和AT%Q*进行变量类型的声明.
+
+#### 语法
+
+```C
+AT%<存储器区前缀><大小前缀><数字>.<数字>
+///具体点
+变量名 AT%<存储器区前缀><大小前缀><数字>.<数字> :数据类型:=赋值;
+//例如:
+axis1_en_cmd AT %MD0.0 :BOOL:=True;
+```
+
 ### 块类型
 
 在POU中包含三种类型的块;
@@ -108,7 +128,7 @@ END_VAR
 
 FunctionBlock在调用时，不建议使用variables方式进行调用
 
-#### FB
+#### FC
 
 * 由PRG或其他FB以及其他FC调用
 * 可以调用：FC
@@ -119,10 +139,11 @@ FunctionBlock在调用时，不建议使用variables方式进行调用
 #### 触发器(Trigger)
 
 ##### 上升沿触发器(R_TRIG)
+
 命名：R是Rising缩写
 作用：输入CLK=TRUE时，Q=FLASE;
 
-```
+```C
 VAR_INPUT
     CLK : BOOL;
 END_VAR
@@ -131,10 +152,11 @@ VAR_OUTPUT
 END_VAR;
 ```
 
-
 ##### 下降沿触发器(F_TRIG)
+
 命名：F是Falling缩写
-```
+
+```C
 VAR_INPUT
     CLK : BOOL;
 END_VAR
@@ -150,3 +172,5 @@ END_VAR;
 * FB:Function Block
 * FC:Function
 * DUT:Data Unit Type 数据单元类型
+* JOG:
+* OD:(object dictionary)对象字典
