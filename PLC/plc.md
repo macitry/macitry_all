@@ -29,7 +29,6 @@ Beckhoff ADS(Automation DeviceSpecification)是一个提供程序之间相互通
 基于TCP/IP协议，监听端口48898用于等待新的客户端
 基于UDP协议，使用通讯端口48899用于广播的方式查找路由。
 
-
 ## 2.通信协议
 
 ### 1.EtherCAT
@@ -85,4 +84,3 @@ CAN in Automation 非盈利组织
 ### 3.OSI模型
 
 数据链路层:包括介质访问控制(MAC)层和逻辑链路控制(LLC)层，关键是形成数据帧
-
