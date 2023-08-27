@@ -52,6 +52,22 @@
 **多行:**
 以 ==(*== 开始, 以 ==*)== 结束
 
+### 操作符
+
+操作|ST符号|类比C语言符号|优先级
+-|-|-|-|-|
+括号|(表达式)|(表达式)|最高
+函数调用|函数名(参数列表,由逗号隔开)|函数名(参数列表,由逗号隔开)|
+求幂|EXPT|pow|
+求负值<br>逻辑取反<br>按位取反|-<br>NOT<br>NOT|-<br>!<br>~|
+乘<br>除<br>取余|*<br>/<br>MOD|\*<br>/<br>%|
+加<br>减|+<br>-|+<br>-|
+比较|<,>,<=,>=|<,>,<=,>=|
+等于<br>不等于|=<br><>|==<br>!=|
+逻辑与<br>按位与|AND<br>AND|&&<br>&|
+异或|XOR|^|
+逻辑或<br>按位或|OR<br>OR|\|\|<br>\||最低
+
 ### 数据类型
 
 #### 整型
@@ -174,10 +190,12 @@ re_Int :=1234;
 #### 数组语法
 
 ```C
+//前缀:arr
+//声明示例
 VAR
-arr_标识符:ARRAY[0..5] OF REAL:=0,5,1,5,0,5;
-arr_标识符:ARRAY[0..1,0..2] OF REAL;
-arr_标识符:ARRAY[0..1,0..1,0..2] OF REAL;
+变量名:ARRAY[0..5] OF REAL:=0,5,1,5,0,5;
+变量名:ARRAY[0..1,0..2] OF REAL;
+变量名:ARRAY[0..1,0..1,0..2] OF REAL;
 END_VAR
 ```
 
@@ -248,7 +266,6 @@ VAR_GLOBAL
 END_VAR
 ```
 
-
 ### 块类型
 
 在POU中包含三种类型的块;
@@ -315,6 +332,6 @@ END_VAR;
 * FB:Function Block
 * FC:Function
 * DUT:Data Unit Type 数据单元类型
-* JOG:
+* JOG:点动信号
 * OD:(object dictionary)对象字典
   
