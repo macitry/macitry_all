@@ -25,7 +25,7 @@
 
 ### 变量命名规则
 
-**变量名的命名规则同C语言类似;**
+**变量名的命名规则同C语言类似之处：**
 
 * 标识符以字母或下划线开头
 * 后跟数字，字母和下划线
@@ -88,10 +88,8 @@ UINT|0|65535|16位|n|
 
 数据类型|最小值|最大值|数据位数|前缀(Prefix)|备注|
 -|-|-|-|-|-|
-REAL|||32位|f|
-LREAL|||64位|f|
-注释：1Byte=8Bit
-该类数据类型可以看作C语言中float单精度实数和double双精度实数。
+REAL|||32位|f|该类数据类型可以看作C语言中<br>float单精度实数和double双精度实数
+LREAL|||64位|f|1Byte=8Bit
 
 #### 日期/时间
 
@@ -180,7 +178,7 @@ re_Int REF=nVar1;
 re_Int :=1234;
 ```
 
-<div align=middle ,><img src ="./图片/REF运行结果1.png" width = "100%" height = "100%" ,/></div>
+<div align=middle><img src ="./图片/REF运行结果1.png" width = "70%" height = "70%" title="REF运行结果" /><h6>REF运行结果</h6></div>
 
 ### 数组
 
@@ -193,9 +191,9 @@ re_Int :=1234;
 //前缀:arr
 //声明示例
 VAR
-变量名:ARRAY[0..5] OF REAL:=0,5,1,5,0,5;
-变量名:ARRAY[0..1,0..2] OF REAL;
-变量名:ARRAY[0..1,0..1,0..2] OF REAL;
+变量名:ARRAY[0..5] OF REAL:=0,5,1,5,0,5;//一维数组
+变量名:ARRAY[0..1,0..2] OF REAL;//二维数组
+变量名:ARRAY[0..1,0..1,0..2] OF REAL;//三维数组
 END_VAR
 ```
 

@@ -5,7 +5,7 @@
 * 对于开机自启动:
 WinCE不需要勾上AUTO LOGON ；
 WINXP 、WIN7 、 WIN10需要勾上AUTO LOGON，并输入对应用户密码，默认出厂用户名：==Administrator== 密码：==1==
-* 代码提示：工具——>选项——>TwinCAT——>PLC Environment——>Smart coding
+* 代码输入提示功能：工具——>选项——>TwinCAT——>PLC Environment——>Smart coding
 勾选(1)键入点号(.)之后列出组件;(2)键入时立即列出组件
 * MC_Jog默认的mode是MC_JOGMODE_STANDARD_SLOW；在此模式下，轴会以axis--parameter属性选项卡里设置的默认速度运行。如果想要手动改变velocity引脚并生效，则需要把模式改成MC_JOGMODE_CONTINOUS，并重新触发功能块
 * override表示给定速度与实际速度的比值，即实际速度=给定速度*速比，如果写入0轴是不转的。MC_power功能块的override引脚也是同理。
