@@ -41,3 +41,5 @@
 * mechanism:机制
 * Hysteresis:磁滞
 * Robust
+* Deburring robot:去毛刺机器人
+* Hybrid Contact Model:混合接触模型
