@@ -1,4 +1,20 @@
 # 教程
+
+## PC端数据标注
+
+1.安装数据标注软件labelme
+
+```C
+pip install labelme
+```
+
+2.打开标注软件，终端运行如下指令
+
+```C
+labelme
+```
+
+
 ## PC端训练环境配置
 1.anaconda 创建环境--此处创建python版本为3.9
 
