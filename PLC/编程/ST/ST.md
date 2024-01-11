@@ -6,8 +6,8 @@
 
 ## 参考资料
 
-* 《TC3_IEC_CH》
-* <https://infosys.beckhoff.com/(此网站为倍福信息系统，大部分所需信息都能在该网站找到)>
+* 《TC3_IEC_CH》(倍福平台资料)
+* <https://infosys.beckhoff.com/>(此网站为倍福信息系统，大部分所需信息都能在该网站找到)
 
 ## 备注
 
